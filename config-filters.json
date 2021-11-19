@@ -1,0 +1,13 @@
+{
+  "steps": {
+    "1": {
+      "filter": "read",
+      "params": ["./testing.txt"],
+      "next": "2"
+    },
+    "2": {
+      "filter": "read",
+      "params": ["./testing.txt"]
+    }
+  }
+}
