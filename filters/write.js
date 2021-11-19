@@ -1,8 +1,6 @@
-module.exports = async function (str) {
+module.exports = async function (str, filepath) {
     fs = require('fs');
-
-    fs.writeFile(str[1], str[0], function (err) {
+    fs.writeFile(filepath, str, function (err) {
         if (err) return console.log(err);
-        console.log(str[0] + ' > ' + str[1]);
-    });
+        console.log('The file ' + filepath + ' was saved!');    });
 };

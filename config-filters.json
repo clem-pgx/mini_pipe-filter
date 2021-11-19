@@ -14,6 +14,10 @@
       "filter": "reverse",
       "params": [],
       "next": "4"
+    },
+    "4": {
+      "filter": "write",
+      "params": ["./result.txt"]
     }
   }
 }
