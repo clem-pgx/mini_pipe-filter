@@ -7,17 +7,13 @@
     },
     "2": {
       "filter": "reverse",
-      "params": ["Bonjour ca va"],
-      "next" : "3"
+      "params": [],
+      "next": "3"
     },
     "3": {
       "filter": "capitalize",
-      "params": ["Bonjour ca va"],
+      "params": [],
       "next": "4"
-    },
-    "4": {
-      "filter": "write",
-      "params": ["Bonjour ca va", "./testing.txt"]
     }
   }
 }

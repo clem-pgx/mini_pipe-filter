@@ -1,14 +1,10 @@
-module.exports = async function (params) {
+module.exports = async function (file) {
   const fs = require("fs").promises;
-
-  async function readFile(filePath) {
-    try {
-      const data = await fs.readFile(filePath);
-      console.log(data.toString());
-    } catch (error) {
-      console.error(`Got an error trying to read the file: ${error.message}`);
-    }
+  try {
+    data = await fs.readFile(file);
+    console.log(data.toString());
+  } catch (error) {
+    console.error(`Got an error trying to read the file: ${error.message}`);
   }
-
-  readFile(params[0]);
+  return data.toString();
 };

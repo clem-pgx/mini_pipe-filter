@@ -62,16 +62,22 @@ async function validateConfigFilters(config) {
   }
 }
 
-async function executeConfigFilters(config, step) {
+async function executeConfigFilters(config, step, prevStepOutput) {
   getFilter(config.steps[step].filter).then((filter) => {
     console.log(
       "Step " + step + " - Executing filter: " + config.steps[step].filter
     );
-    filter(config.steps[step].params).then((result) => {
+    if (prevStepOutput) {
+      config.steps[step].params.unshift(prevStepOutput);
+      console.log(config.steps[step].params);
+    }
+    filter(...config.steps[step].params).then((result) => {
       console.log(config.steps[step]);
       if (config.steps[config.steps[step].next]) {
-        console.log("Step " + step + " - Next step: " + config.steps[step].next);
-        executeConfigFilters(config, config.steps[step].next);
+        console.log(
+          "Step " + step + " - Next step: " + config.steps[step].next
+        );
+        executeConfigFilters(config, config.steps[step].next, result);
       } else {
         return;
       }

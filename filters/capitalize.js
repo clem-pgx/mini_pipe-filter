@@ -1,4 +1,4 @@
 module.exports = async function capitalize(str) {
-  console.log(str[0].toUpperCase());
-  return str[0].toUpperCase()
+  console.log(str.toUpperCase());
+  return str.toUpperCase()
 };
