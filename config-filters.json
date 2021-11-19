@@ -6,12 +6,12 @@
       "next": "2"
     },
     "2": {
-      "filter": "reverse",
+      "filter": "capitalize",
       "params": [],
       "next": "3"
     },
     "3": {
-      "filter": "capitalize",
+      "filter": "reverse",
       "params": [],
       "next": "4"
     }
