@@ -6,8 +6,18 @@
       "next": "2"
     },
     "2": {
-      "filter": "read",
-      "params": ["./testing.txt"]
+      "filter": "reverse",
+      "params": ["Bonjour ca va"],
+      "next" : "3"
+    },
+    "3": {
+      "filter": "capitalize",
+      "params": ["Bonjour ca va"],
+      "next": "4"
+    },
+    "4": {
+      "filter": "write",
+      "params": ["Bonjour ca va", "./testing.txt"]
     }
   }
 }
